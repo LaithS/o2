@@ -213,6 +213,9 @@ void O2::onVerificationReceived(const QMap<QString, QString> response) {
     } else {
         setToken(response.value(O2_OAUTH2_ACCESS_TOKEN));
         setRefreshToken(response.value(O2_OAUTH2_REFRESH_TOKEN));
+        emit linkedChanged();
+        emit tokenChanged();
+        emit linkingSucceeded();
     }
 }
 
